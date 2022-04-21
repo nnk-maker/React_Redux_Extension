@@ -1,15 +1,15 @@
 //import React from 'react';
 
-const count = 5;
-export default function reducer(state = count,action) {
+const initial = [];
+export default function reducer(state = initial,action) {
     const {type,payload} = action;
-  
-    switch(type) {
-        case "INCREMENT":
-            return state+payload;
 
-        case "DECREMENT":
-            return state-1
+    switch(type) {
+        case "ADD":
+            return [...state,payload];
+
+        case "REMOVE":
+            return state.filter(product => product.name !== payload.name);
         default:
             return state;
 

@@ -1,14 +1,15 @@
-export const IncAction = (value) => async dispatch => {
+export const AddProduct = (value) => async dispatch => {
     dispatch({
-        type:"INCREMENT",
+        type:"ADD",
         payload: value
     })
 
 }
 
-export const DecAction = () => async dispatch => {
+export const RemoveProduct = (value) => async dispatch => {
     dispatch({
-        type:"DECREMENT"
+        type:"REMOVE",
+        payload: {name:value}
     })
 
 }
